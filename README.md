@@ -17,12 +17,10 @@ Como médico, entiendo el impacto de los factores de riesgo en la salud. Como ci
 ### 1. Análisis Exploratorio (EDA)
 El análisis inicial de la variable objetivo (`costo_seguro`) mostró un fuerte **sesgo positivo** (cola larga a la derecha). Esto viola los supuestos de muchos modelos de regresión.
 
-*(Pega aquí tu gráfico de distribución "antes")*
 
 ### 2. Preprocesamiento
 Para corregir el sesgo, apliqué una **transformación logarítmica (`np.log1p`)** a la variable `costo_seguro`, resultando en una distribución mucho más normal. Además, se codificaron las variables categóricas (`fumador`, `sexo`, `region`) usando `map` y `get_dummies`.
 
-*(Pega aquí tu gráfico de distribución "después")*
 
 ### 3. Modelado y Resultados
 Se compararon dos modelos. El **Random Forest Regressor** fue el ganador indiscutible, superando ampliamente a la Regresión Lineal.
@@ -32,11 +30,10 @@ Se compararon dos modelos. El **Random Forest Regressor** fue el ganador indiscu
 
 El gráfico de valores reales vs. predichos muestra un excelente ajuste del modelo:
 
-*(Pega aquí tu gráfico de "Reales vs. Predichos")*
 
 ### 4. Conclusión del Modelo
 Finalmente, analicé la importancia de las variables (`feature_importances_`) para entender *en qué* se fijó el modelo:
 
-*(Pega aquí tu gráfico de "Importancia de Variables")*
+
 
 El análisis confirma que **`fumador` (43.6%)**, **`edad` (38.0%)** y **`imc` (10.5%)** son los tres factores decisivos, sumando más del 92% de la importancia predictiva.
